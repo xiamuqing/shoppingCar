@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div id="content">
+        <div id="head">
+            <a href="#/shoppingcar" id="shoppingcar">购 物 车<span id="goodQuantity">0</span></a>
+            <a href="#/goods" id="goods" class="select">商品列表</a>
+        </div>
+        <div id="main">
+            <!-- 变化的部分 -->
+        </div>
+    </div>
+</body>
+<script src="node_modules/seajs/dist/sea.js"></script>
+<script>
+seajs.config({
+    base: './',
+    alias: {
+        jquery: 'node_modules/jquery/dist/jquery.js',
+        template: 'js/template.js',
+        goodsDatas: 'js/goodsDatas.js',
+        shoppingcar: 'js/shoppingcar.js',
+        userCar: 'js/UserCar.js',
+        goods: 'js/goods.js'
+    }
+})
+seajs.use('js/main.js');
+</script>
+<!-- 商品页面 商品列表模板 -->
+<script id="goodsTpl" type="text/html">
+    <div class="items">
+        <img src="static/img/{{imgUrl}}" alt="">
+        <div>
+            <p class="goodTitle"> <span>{{title}}</span>{{subhead}}</p>
+            <p class="price">¥{{price}}</p>
+            <p class="manufacturer">{{author}}<span>/{{producedDate}}/</span>{{manufacturer}}</p>
+            <p class="introduce">{{introduce}}</p>
+            <a href="javascript:;" class="buy" data-num={{id}}>加入购物车</a>
+            <a href="javascript:;" class="collect" data-num={{id}}>收藏</a>
+        </div>
+    </div>
+</script>
+<!-- 购物页面购物车模板 -->
+<script id="shoppingcarTpl" type="text//html">
+    <table id="carGoodTable">
+        <thead>
+            <td colspan="2">商品信息</td>
+            <td>单价（元）</td>
+            <td>数量</td>
+            <td>金额（元）</td>
+            <td>操作</td>
+        </thead>
+        <tbody id="itemList">
+            <!-- 商品列表 -->
+        </tbody>
+        <tfoot>
+            <td></td>
+            <td>已选择 <span id="totalGoods"></span> 件商品</td>
+            <td></td>
+            <td colspan="3">总计： <span id="totalPrice"></span> </td>
+        </tfoot>
+    </table>
+</script>
+<script id="carGoodListTpl" type="text/html">
+    <tr>
+        <td>
+            <img src="static/img/{{imgUrl}}" alt="">
+        </td>
+        <td>
+            {{title}}
+        </td>
+        <td class="price">¥{{price}}</td>
+        <td class="quantity">
+            <button class="sub"  data-id={{id}}> - </button>
+            <span class="buyNum">{{count}}</span>
+            <button class="add"  data-id={{id}}> + </button>
+        </td>
+        <td class="totalPrices" >¥{{count*price}}</td>
+        <td>
+            <a href="javascript:;" class="delete" data-id={{id}}>删除</a>
+        </td>
+    </tr>
+</script>
+
+</html>

@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+}
+
+#content {
+    width: 70%;
+    margin: 30px auto;
+}
+
+#content #head {
+    padding-bottom: 20px;
+    border-bottom: 3px solid #FF2832;
+}
+
+#content #head::after,
+#content #main::after {
+    content: "";
+    height: 0;
+    line-height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+#content a {
+    height: 40px;
+    line-height: 40px;
+    box-sizing: content-box;
+    border-radius: 10px;
+    border: 2px solid #FF2832;
+    color: #FF2832;
+    text-decoration: none;
+    width: 120px;
+    float: right;
+    margin-right: 20px;
+    text-align: center;
+}
+
+#content #shoppingcar {
+    position: relative;
+}
+
+#content #goodQuantity {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 50%;
+    background-color: #FF2832;
+    color: #FFF;
+    top: -5px;
+    right: 5px;
+    font-size: 12px;
+}
+
+#content a:hover #goodQuantity{
+    background-color: #FFF;
+    color: #000;
+}
+
+#content a:hover,
+#content a.select {
+    color: #FFF;
+    background-color: #FF2832;
+}
+
+#main {}
+
+#main .items,
+#main #carGoodTable {
+    height: 200px;
+    margin: 20px auto;
+}
+
+
+/* 商品列表页 */
+
+.items img {
+    float: left;
+    width: 200px;
+    height: 200px;
+    margin-right: 20px;
+}
+
+.items .goodTitle {
+    color: #1A66B3;
+    height: 30px;
+    line-height: 30px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    margin: 8px 0;
+}
+
+.items .goodTitle span {
+    color: #C30;
+}
+
+.items .price {
+    color: #FF2832;
+}
+
+.items .manufacturer {
+    font-size: 12px;
+    color: #1A66B3;
+    margin: 5px 0;
+}
+
+.items .manufacturer span {
+    color: #787878;
+}
+
+.items .introduce {
+    font-size: 14px;
+    height: 75px;
+    line-height: 25px;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+#main .items .buy,
+#main .items .collect {
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    width: 90px;
+    border-radius: 5px;
+}
+
+#main .items .buy {
+    background: #FF2832;
+    color: #FFF;
+}
+
+/* 购物车页面 */
+
+#main #carGoodTable {
+    text-align: center;
+    font-size: 12px;
+    border-spacing: 25px 20px;
+}
+
+#itemList thead {
+    color: #CCC;
+}
+
+#itemList img {
+    width: 100px;
+    height: 100px;
+}
+
+#itemList .quantity {
+    font-weight: bolder;
+}
+
+#itemList .totalPrices {
+    color: #FF2832;
+}
+
+#itemList a {
+    width: 70px;
+    height: 20px;
+    height: 20px;
+    line-height: 20px;
+    border: none;
+    color: #787878;
+}
+
+#itemList a:hover {
+    color: #FF2832;
+    text-decoration: underline;
+    background-color: transparent;
+}
+
+#itemList .add,
+#itemList .sub {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+#carGoodTable tfoot{
+    font-size:16px; border-top:1px solid #ccc;
+}
+#carGoodTable tfoot span{
+    color: #FF2832;
+}
