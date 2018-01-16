@@ -1,3 +1,6 @@
+
+在线预览地址：https://xiamuqing.github.io/shoppingCar/
+
 ### 功能
 - 商品展示功能
 - 添加商品至购物车功能
